@@ -8,8 +8,8 @@ Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd Portfolio3D/textures/floor.png
-map_d Portfolio3D/textures/floor.png
+map_Kd ../textures/floor.png
+map_d ../textures/floor.png
 
 
 # Blender 4.5.0 MTL File: 'None'
