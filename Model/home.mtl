@@ -8,8 +8,8 @@ Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd /Portfolio3D/textures/floor.png
-map_d /Portfolio3D/textures/floor.png
+map_Kd Portfolio3D/textures/floor.png
+map_d Portfolio3D/textures/floor.png
 
 
 # Blender 4.5.0 MTL File: 'None'
@@ -22,173 +22,173 @@ Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd /Portfolio3D/textures/_.png
-map_d /Portfolio3D/textures/_.png
+map_Kd Portfolio3D/textures/_.png
+map_d Portfolio3D/textures/_.png
 
 newmtl Ban
-map_Kd /Portfolio3D/textures/Ban.png
-map_d /Portfolio3D/textures/Ban.png
+map_Kd Portfolio3D/textures/Ban.png
+map_d Portfolio3D/textures/Ban.png
 
 newmtl Bask
-map_Kd /Portfolio3D/textures/Bask.png
-map_d /Portfolio3D/textures/Bask.png
+map_Kd Portfolio3D/textures/Bask.png
+map_d Portfolio3D/textures/Bask.png
 
 newmtl bar
-map_Kd /Portfolio3D/textures/bar.png
-map_d /Portfolio3D/textures/bar.png
+map_Kd Portfolio3D/textures/bar.png
+map_d Portfolio3D/textures/bar.png
 
 newmtl bed
-map_Kd /Portfolio3D/textures/bed.png
-map_d /Portfolio3D/textures/bed.png
+map_Kd Portfolio3D/textures/bed.png
+map_d Portfolio3D/textures/bed.png
 
 newmtl BooksA
-map_Kd /Portfolio3D/textures/BooksA.png
-map_d /Portfolio3D/textures/BooksA.png
+map_Kd Portfolio3D/textures/BooksA.png
+map_d Portfolio3D/textures/BooksA.png
 
 newmtl BooksB
-map_Kd /Portfolio3D/textures/BooksB.png
-map_d /Portfolio3D/textures/BooksB.png
+map_Kd Portfolio3D/textures/BooksB.png
+map_d Portfolio3D/textures/BooksB.png
 
 newmtl Bottle
-map_Kd /Portfolio3D/textures/Bottle.png
-map_d /Portfolio3D/textures/Bottle.png
+map_Kd Portfolio3D/textures/Bottle.png
+map_d Portfolio3D/textures/Bottle.png
 
 newmtl Brush
-map_Kd /Portfolio3D/textures/Brush.png
-map_d /Portfolio3D/textures/Brush.png
+map_Kd Portfolio3D/textures/Brush.png
+map_d Portfolio3D/textures/Brush.png
 
 newmtl Cabs
-map_Kd /Portfolio3D/textures/Cabs.png
-map_d /Portfolio3D/textures/Cabs.png
+map_Kd Portfolio3D/textures/Cabs.png
+map_d Portfolio3D/textures/Cabs.png
 
 newmtl Champs
-map_Kd /Portfolio3D/textures/Champs.png
-map_d /Portfolio3D/textures/Champs.png
+map_Kd Portfolio3D/textures/Champs.png
+map_d Portfolio3D/textures/Champs.png
 
 newmtl Crate
-map_Kd /Portfolio3D/textures/Crate.png
-map_d /Portfolio3D/textures/Crate.png
+map_Kd Portfolio3D/textures/Crate.png
+map_d Portfolio3D/textures/Crate.png
 
 newmtl fabric1cor
-map_Kd /Portfolio3D/textures/fabric1cor.png
-map_d /Portfolio3D/textures/fabric1cor.png
+map_Kd Portfolio3D/textures/fabric1cor.png
+map_d Portfolio3D/textures/fabric1cor.png
 
 newmtl Flowers
-map_Kd /Portfolio3D/textures/Flowers.png
-map_d /Portfolio3D/textures/Flowers.png
+map_Kd Portfolio3D/textures/Flowers.png
+map_d Portfolio3D/textures/Flowers.png
 
 newmtl G_Sheld
-map_Kd /Portfolio3D/textures/G_Sheld.png
-map_d /Portfolio3D/textures/G_Sheld.png
+map_Kd Portfolio3D/textures/G_Sheld.png
+map_d Portfolio3D/textures/G_Sheld.png
 
 newmtl G_Sword
-map_Kd /Portfolio3D/textures/G_Sword.png
-map_d /Portfolio3D/textures/G_Sword.png
+map_Kd Portfolio3D/textures/G_Sword.png
+map_d Portfolio3D/textures/G_Sword.png
 
 newmtl g_club
-map_Kd /Portfolio3D/textures/g_club.png
-map_d /Portfolio3D/textures/g_club.png
+map_Kd Portfolio3D/textures/g_club.png
+map_d Portfolio3D/textures/g_club.png
 
 newmtl glass
-map_Kd /Portfolio3D/textures/glass.png
-map_d /Portfolio3D/textures/glass.png
+map_Kd Portfolio3D/textures/glass.png
+map_d Portfolio3D/textures/glass.png
 
 newmtl InkFeather
-map_Kd /Portfolio3D/textures/InkFeather.png
-map_d /Portfolio3D/textures/InkFeather.png
+map_Kd Portfolio3D/textures/InkFeather.png
+map_d Portfolio3D/textures/InkFeather.png
 
 newmtl Jars
-map_Kd /Portfolio3D/textures/Jars.png
-map_d /Portfolio3D/textures/Jars.png
+map_Kd Portfolio3D/textures/Jars.png
+map_d Portfolio3D/textures/Jars.png
 
 newmtl lat_glass
-map_Kd /Portfolio3D/textures/lat_glass.png
-map_d /Portfolio3D/textures/lat_glass.png
+map_Kd Portfolio3D/textures/lat_glass.png
+map_d Portfolio3D/textures/lat_glass.png
 
 newmtl lumstone_D
-map_Kd /Portfolio3D/textures/lumstone_D.png
-map_d /Portfolio3D/textures/lumstone_D.png
+map_Kd Portfolio3D/textures/lumstone_D.png
+map_d Portfolio3D/textures/lumstone_D.png
 
 newmtl lumstone_night
-map_Kd /Portfolio3D/textures/lumstone_night.png
-map_d /Portfolio3D/textures/lumstone_night.png
+map_Kd Portfolio3D/textures/lumstone_night.png
+map_d Portfolio3D/textures/lumstone_night.png
 
 newmtl Mirror
-map_Kd /Portfolio3D/textures/Mirror.png
-map_d /Portfolio3D/textures/Mirror.png
+map_Kd Portfolio3D/textures/Mirror.png
+map_d Portfolio3D/textures/Mirror.png
 
 newmtl Oven_Door
-map_Kd /Portfolio3D/textures/Oven_Door.png
-map_d /Portfolio3D/textures/Oven_Door.png
+map_Kd Portfolio3D/textures/Oven_Door.png
+map_d Portfolio3D/textures/Oven_Door.png
 
 newmtl Parts_A
-map_Kd /Portfolio3D/textures/Parts_A.png
-map_d /Portfolio3D/textures/Parts_A.png
+map_Kd Portfolio3D/textures/Parts_A.png
+map_d Portfolio3D/textures/Parts_A.png
 
 newmtl Pics1
-map_Kd /Portfolio3D/textures/Pics1.png
-map_d /Portfolio3D/textures/Pics1.png
+map_Kd Portfolio3D/textures/Pics1.png
+map_d Portfolio3D/textures/Pics1.png
 
 newmtl pics2
-map_Kd /Portfolio3D/textures/pics2.png
-map_d /Portfolio3D/textures/pics2.png
+map_Kd Portfolio3D/textures/pics2.png
+map_d Portfolio3D/textures/pics2.png
 
 newmtl R_Bow
-map_Kd /Portfolio3D/textures/R_Bow.png
-map_d /Portfolio3D/textures/R_Bow.png
+map_Kd Portfolio3D/textures/R_Bow.png
+map_d Portfolio3D/textures/R_Bow.png
 
 newmtl Rope
-map_Kd /Portfolio3D/textures/Rope.png
-map_d /Portfolio3D/textures/Rope.png
+map_Kd Portfolio3D/textures/Rope.png
+map_d Portfolio3D/textures/Rope.png
 
 newmtl RugS
-map_Kd /Portfolio3D/textures/RugS.png
-map_d /Portfolio3D/textures/RugS.png
+map_Kd Portfolio3D/textures/RugS.png
+map_d Portfolio3D/textures/RugS.png
 
 newmtl S_Knob
-map_Kd /Portfolio3D/textures/S_Knob.png
-map_d /Portfolio3D/textures/S_Knob.png
+map_Kd Portfolio3D/textures/S_Knob.png
+map_d Portfolio3D/textures/S_Knob.png
 
 newmtl Sofa
-map_Kd /Portfolio3D/textures/Sofa.png
-map_d /Portfolio3D/textures/Sofa.png
+map_Kd Portfolio3D/textures/Sofa.png
+map_d Portfolio3D/textures/Sofa.png
 
 newmtl wall
-map_Kd /Portfolio3D/textures/wall.png
-map_d /Portfolio3D/textures/wall.png
+map_Kd Portfolio3D/textures/wall.png
+map_d Portfolio3D/textures/wall.png
 
 newmtl Wep_mount_back
-map_Kd /Portfolio3D/textures/Wep_mount_back.png
-map_d /Portfolio3D/textures/Wep_mount_back.png
+map_Kd Portfolio3D/textures/Wep_mount_back.png
+map_d Portfolio3D/textures/Wep_mount_back.png
 
 newmtl win_stool
-map_Kd /Portfolio3D/textures/win_stool.png
-map_d /Portfolio3D/textures/win_stool.png
+map_Kd Portfolio3D/textures/win_stool.png
+map_d Portfolio3D/textures/win_stool.png
 
 newmtl Wood
-map_Kd /Portfolio3D/textures/Wood.png
-map_d /Portfolio3D/textures/Wood.png
+map_Kd Portfolio3D/textures/Wood.png
+map_d Portfolio3D/textures/Wood.png
 
 newmtl WoodBlue
-map_Kd /Portfolio3D/textures/WoodBlue.png
-map_d /Portfolio3D/textures/WoodBlue.png
+map_Kd Portfolio3D/textures/WoodBlue.png
+map_d Portfolio3D/textures/WoodBlue.png
 
 newmtl WoodEnd
-map_Kd /Portfolio3D/textures/WoodEnd.png
-map_d /Portfolio3D/textures/WoodEnd.png
+map_Kd Portfolio3D/textures/WoodEnd.png
+map_d Portfolio3D/textures/WoodEnd.png
 
 newmtl WoodFancy
-map_Kd /Portfolio3D/textures/WoodFancy.png
-map_d /Portfolio3D/textures/WoodFancy.png
+map_Kd Portfolio3D/textures/WoodFancy.png
+map_d Portfolio3D/textures/WoodFancy.png
 
 newmtl wood_vert
-map_Kd /Portfolio3D/textures/wood_vert.png
-map_d /Portfolio3D/textures/wood_vert.png
+map_Kd Portfolio3D/textures/wood_vert.png
+map_d Portfolio3D/textures/wood_vert.png
 
 newmtl wood_set
-map_Kd /Portfolio3D/textures/wood_set.png
-map_d /Portfolio3D/textures/wood_set.png
+map_Kd Portfolio3D/textures/wood_set.png
+map_d Portfolio3D/textures/wood_set.png
 
 newmtl Z_Spear
-map_Kd /Portfolio3D/textures/Z_Spear.png
-map_d /Portfolio3D/textures/Z_Spear.png
+map_Kd Portfolio3D/textures/Z_Spear.png
+map_d Portfolio3D/textures/Z_Spear.png
