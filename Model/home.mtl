@@ -1,194 +1,432 @@
 # Blender 4.5.0 MTL File: 'None'
 # www.blender.org
 
-newmtl TextureMaterial_42
+newmtl TextureMaterial.003
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd ../textures/floor.png
-map_d ../textures/floor.png
+map_Kd C:/lat_glass.png
+map_d C:/lat_glass.png
 
-
-# Blender 4.5.0 MTL File: 'None'
-# www.blender.org
-
-newmtl TextureMaterial_42
+newmtl TextureMaterial_1.003
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd ../textures/_.png
-map_d ../textures/_.png
+map_Kd C:/lumstone_night.png
+map_d C:/lumstone_night.png
 
-newmtl Ban
-map_Kd ../textures/Ban.png
-map_d ../textures/Ban.png
+newmtl TextureMaterial_10.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Bottle.png
+map_d C:/Bottle.png
 
-newmtl Bask
-map_Kd ../textures/Bask.png
-map_d ../textures/Bask.png
+newmtl TextureMaterial_11.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Brush.png
+map_d C:/Brush.png
 
-newmtl bar
-map_Kd ../textures/bar.png
-map_d ../textures/bar.png
+newmtl TextureMaterial_12.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Cabs.png
+map_d C:/Cabs.png
 
-newmtl bed
-map_Kd ../textures/bed.png
-map_d ../textures/bed.png
+newmtl TextureMaterial_13.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Wood_fancy.png
+map_d C:/Wood_fancy.png
 
-newmtl BooksA
-map_Kd ../textures/BooksA.png
-map_d ../textures/BooksA.png
+newmtl TextureMaterial_14.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/S_Knob.png
+map_d C:/S_Knob.png
 
-newmtl BooksB
-map_Kd ../textures/BooksB.png
-map_d ../textures/BooksB.png
+newmtl TextureMaterial_15.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Champs.png
+map_d C:/Champs.png
 
-newmtl Bottle
-map_Kd ../textures/Bottle.png
-map_d ../textures/Bottle.png
+newmtl TextureMaterial_16.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Crate.png
+map_d C:/Crate.png
 
-newmtl Brush
-map_Kd ../textures/Brush.png
-map_d ../textures/Brush.png
+newmtl TextureMaterial_17.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Sofa.png
+map_d C:/Sofa.png
 
-newmtl Cabs
-map_Kd ../textures/Cabs.png
-map_d ../textures/Cabs.png
+newmtl TextureMaterial_18.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Parts_A.png
+map_d C:/Parts_A.png
 
-newmtl Champs
-map_Kd ../textures/Champs.png
-map_d ../textures/Champs.png
+newmtl TextureMaterial_19.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/wood_vert.png
+map_d C:/wood_vert.png
 
-newmtl Crate
-map_Kd ../textures/Crate.png
-map_d ../textures/Crate.png
+newmtl TextureMaterial_2.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Ban.png
+map_d C:/Ban.png
 
-newmtl fabric1cor
-map_Kd ../textures/fabric1cor.png
-map_d ../textures/fabric1cor.png
+newmtl TextureMaterial_20.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/fabric1.png
+map_d C:/fabric1.png
 
-newmtl Flowers
-map_Kd ../textures/Flowers.png
-map_d ../textures/Flowers.png
+newmtl TextureMaterial_21.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/wall.png
+map_d C:/wall.png
 
-newmtl G_Sheld
-map_Kd ../textures/G_Sheld.png
-map_d ../textures/G_Sheld.png
+newmtl TextureMaterial_22.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/floor.png
+map_d C:/floor.png
 
-newmtl G_Sword
-map_Kd ../textures/G_Sword.png
-map_d ../textures/G_Sword.png
+newmtl TextureMaterial_23.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/G_Sheld.png
+map_d C:/G_Sheld.png
 
-newmtl g_club
-map_Kd ../textures/g_club.png
-map_d ../textures/g_club.png
+newmtl TextureMaterial_24.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/G_Sword.png
+map_d C:/G_Sword.png
 
-newmtl glass
-map_Kd ../textures/glass.png
-map_d ../textures/glass.png
+newmtl TextureMaterial_25.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/G_club.png
+map_d C:/G_club.png
 
-newmtl InkFeather
-map_Kd ../textures/InkFeather.png
-map_d ../textures/InkFeather.png
+newmtl TextureMaterial_26.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/InkFeather.png
+map_d C:/InkFeather.png
 
-newmtl Jars
-map_Kd ../textures/Jars.png
-map_d ../textures/Jars.png
+newmtl TextureMaterial_27.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Jars.png
+map_d C:/Jars.png
 
-newmtl lat_glass
-map_Kd ../textures/lat_glass.png
-map_d ../textures/lat_glass.png
+newmtl TextureMaterial_28.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Pics1.png
+map_d C:/Pics1.png
 
-newmtl lumstone_D
-map_Kd ../textures/lumstone_D.png
-map_d ../textures/lumstone_D.png
+newmtl TextureMaterial_29.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/lumstone_D.png
+map_d C:/lumstone_D.png
 
-newmtl lumstone_night
-map_Kd ../textures/lumstone_night.png
-map_d ../textures/lumstone_night.png
+newmtl TextureMaterial_3.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Flowers.png
+map_d C:/Flowers.png
 
-newmtl Mirror
-map_Kd ../textures/Mirror.png
-map_d ../textures/Mirror.png
+newmtl TextureMaterial_30.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Wep_mount_back.png
+map_d C:/Wep_mount_back.png
 
-newmtl Oven_Door
-map_Kd ../textures/Oven_Door.png
-map_d ../textures/Oven_Door.png
+newmtl TextureMaterial_31.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Wood.png
+map_d C:/Wood.png
 
-newmtl Parts_A
-map_Kd ../textures/Parts_A.png
-map_d ../textures/Parts_A.png
+newmtl TextureMaterial_32.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Oven_Door.png
+map_d C:/Oven_Door.png
 
-newmtl Pics1
-map_Kd ../textures/Pics1.png
-map_d ../textures/Pics1.png
+newmtl TextureMaterial_33.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/pics2.png
+map_d C:/pics2.png
 
-newmtl pics2
-map_Kd ../textures/pics2.png
-map_d ../textures/pics2.png
+newmtl TextureMaterial_34.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/R_Bow.png
+map_d C:/R_Bow.png
 
-newmtl R_Bow
-map_Kd ../textures/R_Bow.png
-map_d ../textures/R_Bow.png
+newmtl TextureMaterial_35.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Rope.png
+map_d C:/Rope.png
 
-newmtl Rope
-map_Kd ../textures/Rope.png
-map_d ../textures/Rope.png
+newmtl TextureMaterial_36.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Mirror.png
+map_d C:/Mirror.png
 
-newmtl RugS
-map_Kd ../textures/RugS.png
-map_d ../textures/RugS.png
+newmtl TextureMaterial_37.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/win_stool.png
+map_d C:/win_stool.png
 
-newmtl S_Knob
-map_Kd ../textures/S_Knob.png
-map_d ../textures/S_Knob.png
+newmtl TextureMaterial_38.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/WoodEnd.png
+map_d C:/WoodEnd.png
 
-newmtl Sofa
-map_Kd ../textures/Sofa.png
-map_d ../textures/Sofa.png
+newmtl TextureMaterial_39.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Bask.png
+map_d C:/Bask.png
 
-newmtl wall
-map_Kd ../textures/wall.png
-map_d ../textures/wall.png
+newmtl TextureMaterial_4.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/glass.png
+map_d C:/glass.png
 
-newmtl Wep_mount_back
-map_Kd ../textures/Wep_mount_back.png
-map_d ../textures/Wep_mount_back.png
+newmtl TextureMaterial_40.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/RugS.png
+map_d C:/RugS.png
 
-newmtl win_stool
-map_Kd ../textures/win_stool.png
-map_d ../textures/win_stool.png
+newmtl TextureMaterial_41.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Z_Spear.png
+map_d C:/Z_Spear.png
 
-newmtl Wood
-map_Kd ../textures/Wood.png
-map_d ../textures/Wood.png
+newmtl TextureMaterial_42.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/_.png
+map_d C:/_.png
 
-newmtl WoodBlue
-map_Kd ../textures/WoodBlue.png
-map_d ../textures/WoodBlue.png
+newmtl TextureMaterial_5.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/bar.png
+map_d C:/bar.png
 
-newmtl WoodEnd
-map_Kd ../textures/WoodEnd.png
-map_d ../textures/WoodEnd.png
+newmtl TextureMaterial_6.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/bed.png
+map_d C:/bed.png
 
-newmtl WoodFancy
-map_Kd ../textures/WoodFancy.png
-map_d ../textures/WoodFancy.png
+newmtl TextureMaterial_7.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/WoodBlue.png
+map_d C:/WoodBlue.png
 
-newmtl wood_vert
-map_Kd ../textures/wood_vert.png
-map_d ../textures/wood_vert.png
+newmtl TextureMaterial_8.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/BooksA.png
+map_d C:/BooksA.png
 
-newmtl wood_set
-map_Kd ../textures/wood_set.png
-map_d ../textures/wood_set.png
-
-newmtl Z_Spear
-map_Kd ../textures/Z_Spear.png
-map_d ../textures/Z_Spear.png
+newmtl TextureMaterial_9.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/BooksB.png
+map_d C:/BooksB.png
