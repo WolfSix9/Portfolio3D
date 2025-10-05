@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- โหลดไลบรารีที่จำเป็น -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/RGBELoader.js"></script>
+
+    <script>
+        // -------------------------------
+        // Renderer
+        // -------------------------------
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMap.enabled = true;
+        document.body.appendChild(renderer.domElement);
+
+        // -------------------------------
+        // Scene
+        // -------------------------------
+        const scene = new THREE.Scene();
+
+        // -------------------------------
+        // Camera
+        // -------------------------------
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 2, 8);
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // -------------------------------
+        // Light
+        // -------------------------------
+        scene.add(new THREE.AmbientLight(0xffffff, 1.5));
+        const dirLight = new THREE.DirectionalLight(0xffffff, 2.0);
+        dirLight.position.set(10, 10, 10);
+        dirLight.castShadow = true;
+        scene.add(dirLight);
+
+        // -------------------------------
+        // Ground plane (พื้น)
+        // -------------------------------
+        const groundTexture = new THREE.TextureLoader().load(
+            'https://film2147.github.io/modelwork3/asphalt-road-texture-dark-gray-color_1017-20231.jpg' // <-- ใส่ลิงก์ texture พื้น (เช่น 'textures/ground.jpg')
+        );
+        groundTexture.wrapS = THREE.RepeatWrapping;
+        groundTexture.wrapT = THREE.RepeatWrapping;
+        groundTexture.repeat.set(4, 4);
+
+        const groundGeo = new THREE.PlaneGeometry(50, 50);
+        const groundMat = new THREE.MeshStandardMaterial({
+            map: groundTexture,
+            roughness: 0.8,
+            metalness: 0.2
+        });
+        const ground = new THREE.Mesh(groundGeo, groundMat);
+        ground.rotation.x = -Math.PI / 2;
+        ground.position.y = 0;
+        ground.receiveShadow = true;
+        scene.add(ground);
+
+        // -------------------------------
+        // HDRI background (ท้องฟ้า)
+        // -------------------------------
+        const rgbeLoader = new THREE.RGBELoader();
+        rgbeLoader.setDataType(THREE.UnsignedByteType);
+        rgbeLoader.load(
+            'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/qwantani_dusk_1_puresky_1k.hdr', // <-- ใส่ลิงก์ HDRI (.hdr)
+            function (texture) {
+                texture.mapping = THREE.EquirectangularReflectionMapping;
+                scene.background = texture;
+                scene.environment = texture;
+            }
+        );
+
+        // -------------------------------
+        // โหลดโมเดล (Model)
+        // -------------------------------
+        const loader = new THREE.OBJLoader();
+        loader.load(
+            'https://wolfsix9.github.io/home/home.obj', // <-- ใส่ลิงก์โมเดล .obj
+            function (object) {
+                object.traverse(function (child) {
+                    if (child.isMesh) {
+                        child.castShadow = true;
+                        child.receiveShadow = true;
+
+                        // โหลดเท็กซ์เจอร์ของโมเดล
+                        const texture = new THREE.TextureLoader().load(
+                            'https://wolfsix9.github.io/home_texture01/Ban.png/Bask.png/BooksA.png/BooksB.png/Bottle.png/Brush.png/Cabs.png/Champs.png/Crate.png/Flowers.png/G_Sheld.png/G_Sword.png/G_club.png/InkFeather.png/Jars.png/Mirror.png/Oven_Door.png/Parts_A.png/Pics1.png/R_Bow.png/Rope.png/RugS.png/S_Knob.png/Sofa.png/Wep_mount_back.png/Wood.png/WoodBlue.png/WoodEnd.png/Wood_fancy.png/Z_Spear.png_.png/bar.png/bed.png/fabric1.png/floor.png/glass.png/lat_glass.png/lumstone_D.png/lumstone_night.png/pics2.png/wall.png/win_stool.png/wood_vert.png' // <-- ใส่ลิงก์ texture ของโมเดล
+                        );
+ 
+                        // กำหนดวัสดุของโมเดล
+                        child.material = new THREE.MeshStandardMaterial({
+                            map: texture,
+                            roughness: 0.6,
+                            metalness: 0.3
+                        });
+                    }
+                });
+
+                // ตั้งค่าตำแหน่งและขนาดของโมเดล
+                object.scale.set(10, 10, 10);
+                object.position.set(0, 1, 0);
+                scene.add(object);
+            },
+            function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+            },
+            function (error) {
+                console.error('เกิดข้อผิดพลาดในการโหลดโมเดล:', error);
+            }
+        );
+
+        // -------------------------------
+        // dat.GUI สำหรับควบคุมแสง
+        // -------------------------------
+        const gui = new dat.GUI();
+        const lightFolder = gui.addFolder('Light');
+        lightFolder.add(dirLight, 'intensity', 0, 5).name('Directional Intensity');
+        lightFolder.add(dirLight.position, 'x', -20, 20).name('DirLight X');
+        lightFolder.add(dirLight.position, 'y', -20, 20).name('DirLight Y');
+        lightFolder.add(dirLight.position, 'z', -20, 20).name('DirLight Z');
+        lightFolder.open();
+
+        // -------------------------------
+        // วนลูปแสดงผล (Render Loop)
+        // -------------------------------
+        function animate() {
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // ปรับขนาดเมื่อเปลี่ยนหน้าต่าง
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+
+</html>
