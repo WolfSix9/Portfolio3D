@@ -55,7 +55,7 @@ map_d ../textures/Bottle.png
 
 newmtl Brush
 map_Kd ../textures/Brush.png
-map_d Portfolio3D/textures/Brush.png
+map_d ../textures/Brush.png
 
 newmtl Cabs
 map_Kd ../textures/Cabs.png
@@ -151,7 +151,7 @@ map_d ../textures/S_Knob.png
 
 newmtl Sofa
 map_Kd ../textures/Sofa.png
-map_d .../textures/Sofa.png
+map_d ../textures/Sofa.png
 
 newmtl wall
 map_Kd ../textures/wall.png
