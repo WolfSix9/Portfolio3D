@@ -1,15 +1,452 @@
 # Blender 4.5.0 MTL File: 'None'
 # www.blender.org
 
-newmtl Material_nameboard
+newmtl Material.001
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/nameboard.jpg
+
+newmtl Material.002
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.271479 0.003750
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 1
+
+newmtl TextureMaterial.003
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Kd 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-d 1.000000
-Tr 0.000000
-map_Kd ../textures/nameboard.jpg
-map_d ../textures/nameboard.jpg
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/floor.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/floor.png
+
+newmtl TextureMaterial_1.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/lumstone_night.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/lumstone_night.png
+
+newmtl TextureMaterial_10.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Bottle.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Bottle.png
+
+newmtl TextureMaterial_11.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Brush.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Brush.png
+
+newmtl TextureMaterial_12.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Cabs.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Cabs.png
+
+newmtl TextureMaterial_13.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Wood_fancy.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Wood_fancy.png
+
+newmtl TextureMaterial_14.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/S_Knob.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/S_Knob.png
+
+newmtl TextureMaterial_15.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Champs.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Champs.png
+
+newmtl TextureMaterial_16.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Crate.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Crate.png
+
+newmtl TextureMaterial_17.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Sofa.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Sofa.png
+
+newmtl TextureMaterial_18.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Parts_A.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Parts_A.png
+
+newmtl TextureMaterial_19.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/wood_vert.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/wood_vert.png
+
+newmtl TextureMaterial_2.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Ban.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Ban.png
+
+newmtl TextureMaterial_20.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/fabric1.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/fabric1.png
+
+newmtl TextureMaterial_21.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/wall.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/wall.png
+
+newmtl TextureMaterial_22.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/floor.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/floor.png
+
+newmtl TextureMaterial_23.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/G_Sheld.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/G_Sheld.png
+
+newmtl TextureMaterial_24.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/G_Sword.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/G_Sword.png
+
+newmtl TextureMaterial_25.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/G_club.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/G_club.png
+
+newmtl TextureMaterial_26.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/InkFeather.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/InkFeather.png
+
+newmtl TextureMaterial_27.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Jars.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Jars.png
+
+newmtl TextureMaterial_28.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Pics1.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Pics1.png
+
+newmtl TextureMaterial_29.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/lumstone_D.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/lumstone_D.png
+
+newmtl TextureMaterial_3.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Flowers.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Flowers.png
+
+newmtl TextureMaterial_30.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/floor.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/floor.png
+
+newmtl TextureMaterial_31.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Wood.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Wood.png
+
+newmtl TextureMaterial_32.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Oven_Door.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Oven_Door.png
+
+newmtl TextureMaterial_33.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/pics2.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/pics2.png
+
+newmtl TextureMaterial_34.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/R_Bow.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/R_Bow.png
+
+newmtl TextureMaterial_35.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Rope.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Rope.png
+
+newmtl TextureMaterial_36.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Mirror.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Mirror.png
+
+newmtl TextureMaterial_37.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/win_stool.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/win_stool.png
+
+newmtl TextureMaterial_38.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/WoodEnd.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/WoodEnd.png
+
+newmtl TextureMaterial_39.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Bask.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Bask.png
+
+newmtl TextureMaterial_4.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/glass.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/glass.png
+
+newmtl TextureMaterial_40.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/RugS.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/RugS.png
+
+newmtl TextureMaterial_41.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/Z_Spear.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/Z_Spear.png
+
+newmtl TextureMaterial_42.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/A.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/A.png
+
+newmtl TextureMaterial_5.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/bar.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/bar.png
+
+newmtl TextureMaterial_6.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/bed.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/bed.png
+
+newmtl TextureMaterial_7.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/WoodBlue.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/WoodBlue.png
+
+newmtl TextureMaterial_8.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/BooksA.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/BooksA.png
+
+newmtl TextureMaterial_9.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/BooksB.png
+map_d C:/Users/Admin/Desktop/Portfolio3D/textures/BooksB.png
