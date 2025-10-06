@@ -8,8 +8,8 @@ Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd ../textures/lat_glass.png
-map_d ../textures/lat_glass.png
+map_Kd ../textures/floor.png
+map_d ../textures/floor.png
 
 newmtl TextureMaterial_1.003
 Ns 250.000000
@@ -188,8 +188,8 @@ Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd ../textures/G_club.png
-map_d ../textures/G_club.png
+map_Kd ../textures/g_club.png
+map_d ../textures/g_club.png
 
 newmtl TextureMaterial_26.003
 Ns 250.000000
@@ -248,8 +248,8 @@ Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
-map_Kd ../textures/Wep_mount_back.png
-map_d ../textures/Wep_mount_back.png
+map_Kd ../textures/floor.png
+map_d ../textures/floor.png
 
 newmtl TextureMaterial_31.003
 Ns 250.000000
