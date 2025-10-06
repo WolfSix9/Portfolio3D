@@ -7,8 +7,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/floor.png
 map_d ../textures/floor.png
@@ -19,8 +17,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/lumstone_night.png
 map_d ../textures/lumstone_night.png
@@ -31,8 +27,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Bottle.png
 map_d ../textures/Bottle.png
@@ -43,8 +37,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Brush.png
 map_d ../textures/Brush.png
@@ -55,8 +47,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Cabs.png
 map_d ../textures/Cabs.png
@@ -67,8 +57,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Wood_fancy.png
 map_d ../textures/Wood_fancy.png
@@ -79,8 +67,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/S_Knob.png
 map_d ../textures/S_Knob.png
@@ -90,8 +76,7 @@ Ns 250.000000
 Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
-Ni 1.500000d 5.000000
-Tr 2.000000
+Ni 1.500000
 illum 2
 map_Kd ../textures/Champs.png
 map_d ../textures/Champs.png
@@ -102,8 +87,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Crate.png
 map_d ../textures/Crate.png
@@ -114,8 +97,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Sofa.png
 map_d ../textures/Sofa.png
@@ -126,8 +107,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Parts_A.png
 map_d ../textures/Parts_A.png
@@ -138,8 +117,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/wood_vert.png
 map_d ../textures/wood_vert.png
@@ -150,8 +127,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Ban.png
 map_d ../textures/Ban.png
@@ -162,8 +137,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/fabric1.png
 map_d ../textures/fabric1.png
@@ -174,8 +147,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/wall.png
 map_d ../textures/wall.png
@@ -186,8 +157,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/floor.png
 map_d ../textures/floor.png
@@ -198,8 +167,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/G_Sheld.png
 map_d ../textures/G_Sheld.png
@@ -210,8 +177,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/G_Sword.png
 map_d ../textures/G_Sword.png
@@ -222,8 +187,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/g_club.png
 map_d ../textures/g_club.png
@@ -234,8 +197,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/InkFeather.png
 map_d ../textures/InkFeather.png
@@ -246,8 +207,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Jars.png
 map_d ../textures/Jars.png
@@ -258,8 +217,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Pics1.png
 map_d ../textures/Pics1.png
@@ -270,8 +227,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/lumstone_D.png
 map_d ../textures/lumstone_D.png
@@ -282,8 +237,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Flowers.png
 map_d ../textures/Flowers.png
@@ -294,8 +247,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/floor.png
 map_d ../textures/floor.png
@@ -306,8 +257,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Wood.png
 map_d ../textures/Wood.png
@@ -318,8 +267,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Oven_Door.png
 map_d ../textures/Oven_Door.png
@@ -330,8 +277,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/pics2.png
 map_d ../textures/pics2.png
@@ -342,8 +287,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/R_Bow.png
 map_d ../textures/R_Bow.png
@@ -354,8 +297,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Rope.png
 map_d ../textures/Rope.png
@@ -366,8 +307,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Mirror.png
 map_d ../textures/Mirror.png
@@ -378,8 +317,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/win_stool.png
 map_d ../textures/win_stool.png
@@ -390,8 +327,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/WoodEnd.png
 map_d ../textures/WoodEnd.png
@@ -402,8 +337,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 5.000000
 illum 2
 map_Kd ../textures/Bask.png
 map_d ../textures/Bask.png
@@ -414,8 +347,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/glass.png
 map_d ../textures/glass.png
@@ -426,8 +357,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/RugS.png
 map_d ../textures/RugS.png
@@ -438,8 +367,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/Z_Spear.png
 map_d ../textures/Z_Spear.png
@@ -450,8 +377,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/_.png
 map_d ../textures/_.png
@@ -462,8 +387,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/bar.png
 map_d ../textures/bar.png
@@ -474,8 +397,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/bed.png
 map_d ../textures/bed.png
@@ -486,8 +407,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/WoodBlue.png
 map_d ../textures/WoodBlue.png
@@ -498,8 +417,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/BooksA.png
 map_d ../textures/BooksA.png
@@ -510,8 +427,6 @@ Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
-d 5.000000
-Tr 2.000000
 illum 2
 map_Kd ../textures/BooksB.png
 map_d ../textures/BooksB.png
