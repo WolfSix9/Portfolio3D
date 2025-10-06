@@ -54,7 +54,7 @@
         // -------------------------------
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 30, 0);
+        camera.position.set(0, 0, 0);
 
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
@@ -134,7 +134,7 @@
                         }
                     });
                     object.scale.set(50, 50, 50);
-                    object.position.set(0, -10, 0);
+                    object.position.set(0, -30, 0);
                     scene.add(object);
                     document.getElementById("loading").style.display = "none";
                 },
