@@ -1,3 +1,4 @@
+@ -1,432 +1,22 @@
 # Blender 4.5.0 MTL File: 'None'
 # www.blender.org
 
@@ -413,20 +414,31 @@ map_d ../textures/WoodBlue.png
 
 newmtl TextureMaterial_8.003
 Ns 250.000000
+newmtl Material.001
+Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
+Ks 0.000000 0.000000 0.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
 map_Kd ../textures/BooksA.png
 map_d ../textures/BooksA.png
+d 1.000000
+illum 1
+map_Kd C:/Users/Admin/Desktop/Portfolio3D/textures/nameboard.jpg
 
 newmtl TextureMaterial_9.003
+newmtl Material.002
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
 Ks 0.500000 0.500000 0.500000
+Kd 0.537416 0.490530 0.504669
+Ks 0.000000 0.000000 0.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 illum 2
 map_Kd ../textures/BooksB.png
 map_d ../textures/BooksB.png
+d 1.000000
+illum 1
