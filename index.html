@@ -72,23 +72,6 @@
         // -------------------------------
         // Ground
         // -------------------------------
-        const groundTex = new THREE.TextureLoader().load(
-            
-        );
-        groundTex.wrapS = THREE.RepeatWrapping;
-        groundTex.wrapT = THREE.RepeatWrapping;
-        groundTex.repeat.set(6, 6);
-
-        const groundMat = new THREE.MeshStandardMaterial({
-            map: groundTex,
-            roughness: 1.0,
-            metalness: 0.0,
-        });
-
-        const ground = new THREE.Mesh(new THREE.PlaneGeometry(100, 100), groundMat);
-        ground.rotation.x = -Math.PI / 2;
-        ground.receiveShadow = true;
-        scene.add(ground);
 
         // -------------------------------
         // Background HDRI
