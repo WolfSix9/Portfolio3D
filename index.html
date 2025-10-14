@@ -1,155 +1,170 @@
-<script>
-    // -------------------------------
-    // Renderer
-    // -------------------------------
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.shadowMap.enabled = true;
-    renderer.outputEncoding = THREE.sRGBEncoding;
-    document.body.appendChild(renderer.domElement);
+<!DOCTYPE html>
+<html lang="th">
 
-    // -------------------------------
-    // Scene + Camera
-    // -------------------------------
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 2, 5);
-
-    // -------------------------------
-    // Orbit Controls (หมุนรอบวัตถุ)
-    // -------------------------------
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-
-    // -------------------------------
-    // Free Camera Movement (เดินอิสระ)
-    // -------------------------------
-    let moveForward = false;
-    let moveBackward = false;
-    let moveLeft = false;
-    let moveRight = false;
-    const speed = 0.1;
-    let pitch = 0, yaw = 0;
-    let mouseDown = false;
-
-    document.addEventListener('mousedown', () => { mouseDown = true; });
-    document.addEventListener('mouseup', () => { mouseDown = false; });
-    document.addEventListener('mousemove', (e) => {
-        if (mouseDown) {
-            yaw -= e.movementX * 0.002;
-            pitch -= e.movementY * 0.002;
-            pitch = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, pitch));
-            camera.rotation.set(pitch, yaw, 0);
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.code === 'KeyW') moveForward = true;
-        if (e.code === 'KeyS') moveBackward = true;
-        if (e.code === 'KeyA') moveLeft = true;
-        if (e.code === 'KeyD') moveRight = true;
-    });
-    document.addEventListener('keyup', (e) => {
-        if (e.code === 'KeyW') moveForward = false;
-        if (e.code === 'KeyS') moveBackward = false;
-        if (e.code === 'KeyA') moveLeft = false;
-        if (e.code === 'KeyD') moveRight = false;
-    });
-
-    // -------------------------------
-    // Light
-    // -------------------------------
-    scene.add(new THREE.AmbientLight(0xffffff, 1.0));
-    const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
-    dirLight.position.set(10, 15, 10);
-    dirLight.castShadow = true;
-    scene.add(dirLight);
-
-    // -------------------------------
-    // Background HDRI
-    // -------------------------------
-    const rgbeLoader = new THREE.RGBELoader();
-    rgbeLoader.setDataType(THREE.UnsignedByteType);
-    rgbeLoader.load(
-        "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/qwantani_dusk_1_puresky_1k.hdr",
-        (texture) => {
-            texture.mapping = THREE.EquirectangularReflectionMapping;
-            scene.background = texture;
-            scene.environment = texture;
-        }
-    );
-
-    // -------------------------------
-    // Load Model
-    // -------------------------------
-    const mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setPath("Model/");
-    mtlLoader.load("home.mtl", (materials) => {
-        materials.preload();
-        for (let key in materials.materials) {
-            let mat = materials.materials[key];
-            mat.transparent = false;
-            mat.opacity = 1.0;
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio 3D Model Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
         }
 
-        const objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials(materials);
-        objLoader.setPath("Model/");
-        objLoader.load(
-            "home.obj",
-            (object) => {
-                object.traverse((child) => {
-                    if (child.isMesh) {
-                        child.material.transparent = false;
-                        child.material.opacity = 1.0;
-                        child.castShadow = true;
-                        child.receiveShadow = true;
-                    }
-                });
-                object.scale.set(50, 50, 50);
-                object.position.set(0, -25, 0);
-                scene.add(object);
-                document.getElementById("loading").style.display = "none";
-            },
-            (xhr) => {
-                document.getElementById("loading").innerText =
-                    "กำลังโหลด... " + Math.round((xhr.loaded / xhr.total) * 100) + "%";
-            },
-            (error) => {
-                console.error("❌ โหลดโมเดลไม่สำเร็จ:", error);
-                document.getElementById("loading").innerText =
-                    "เกิดข้อผิดพลาดในการโหลดโมเดล!";
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">กำลังโหลดโมเดล...</div>
+
+    <!-- โหลดไลบรารี -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/RGBELoader.js"></script>
+
+    <script>
+        // -------------------------------
+        // Renderer
+        // -------------------------------
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMap.enabled = true;
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        document.body.appendChild(renderer.domElement);
+
+        // -------------------------------
+        // Scene + Camera
+        // -------------------------------
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(1, 1, 1);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // -------------------------------
+        // Light
+        // -------------------------------
+        scene.add(new THREE.AmbientLight(0xffffff, 1.0));
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
+        dirLight.position.set(10, 15, 10);
+        dirLight.castShadow = true;
+        scene.add(dirLight);
+
+  
+
+        // -------------------------------
+        // Background HDRI
+        // -------------------------------
+        const rgbeLoader = new THREE.RGBELoader();
+        rgbeLoader.setDataType(THREE.UnsignedByteType);
+        rgbeLoader.load(
+            "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/qwantani_dusk_1_puresky_1k.hdr",
+            (texture) => {
+                texture.mapping = THREE.EquirectangularReflectionMapping;
+                scene.background = texture;
+                scene.environment = texture;
             }
         );
-    });
 
-    // -------------------------------
-    // Animate
-    // -------------------------------
-    function animate() {
-        requestAnimationFrame(animate);
+        // -------------------------------
+        // Load Model
+        // -------------------------------
+        const mtlLoader = new THREE.MTLLoader();
+        mtlLoader.setPath("Model/");
+        mtlLoader.load("home.mtl", (materials) => {
+            materials.preload();
 
-        // การเคลื่อนกล้องอิสระ
-        const direction = new THREE.Vector3();
-        camera.getWorldDirection(direction);
+            // ปรับทุก material ไม่ให้โปร่งแสง
+            for (let key in materials.materials) {
+                let mat = materials.materials[key];
+                mat.transparent = false;
+                mat.opacity = 1.0;
+            }
 
-        if (moveForward) camera.position.addScaledVector(direction, speed);
-        if (moveBackward) camera.position.addScaledVector(direction, -speed);
-        if (moveLeft) camera.position.addScaledVector(new THREE.Vector3().crossVectors(camera.up, direction).normalize(), speed);
-        if (moveRight) camera.position.addScaledVector(new THREE.Vector3().crossVectors(direction, camera.up).normalize(), speed);
+            const objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath("Model/");
+            objLoader.load(
+                "home.obj",
+                (object) => {
+                    object.traverse((child) => {
+                        if (child.isMesh) {
+                            child.material.transparent = false;
+                            child.material.opacity = 1.0;
+                            child.castShadow = true;
+                            child.receiveShadow = true;
+                        }
+                    });
+                    object.scale.set(50, 50, 50);
+                    object.position.set(0, -25, 0);
+                    scene.add(object);
+                    document.getElementById("loading").style.display = "none";
+                },
+                (xhr) => {
+                    document.getElementById("loading").innerText =
+                        "กำลังโหลด... " + Math.round((xhr.loaded / xhr.total) * 100) + "%";
+                },
+                (error) => {
+                    console.error("❌ โหลดโมเดลไม่สำเร็จ:", error);
+                    document.getElementById("loading").innerText =
+                        "เกิดข้อผิดพลาดในการโหลดโมเดล!";
+                }
+            );
+        });
+        // โหลดโมเดลใหม่ (nameboard.obj)
+        const mtlLoader2 = new THREE.MTLLoader();
+        mtlLoader2.setPath("Model/");
+        mtlLoader2.load("nameboard.mtl", (materials) => {
+            materials.preload();
+            const objLoader2 = new THREE.OBJLoader();
+            objLoader2.setMaterials(materials);
+            objLoader2.setPath("Model/");
+            objLoader2.load("nameboard.obj", (object2) => {
+                object2.scale.set(0, 0, 0); // ปรับขนาด
+                object2.position.set(1, 1, 1); // ปรับตำแหน่งบนแกน Z หรือ Y
+                scene.add(object2);
+            });
+        });
 
-        controls.update();
-        renderer.render(scene, camera);
-    }
-    animate();
 
-    // -------------------------------
-    // Resize Event
-    // -------------------------------
-    window.addEventListener("resize", () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-</script>
+        // -------------------------------
+        // Render Loop
+        // -------------------------------
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // -------------------------------
+        // Resize Event
+        // -------------------------------
+        window.addEventListener("resize", () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+
+</html>
