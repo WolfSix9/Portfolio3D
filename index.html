@@ -136,4 +136,20 @@
 
         if (moveForward) camera.position.addScaledVector(direction, speed);
         if (moveBackward) camera.position.addScaledVector(direction, -speed);
-        if (moveLeft) came
+        if (moveLeft) camera.position.addScaledVector(new THREE.Vector3().crossVectors(camera.up, direction).normalize(), speed);
+        if (moveRight) camera.position.addScaledVector(new THREE.Vector3().crossVectors(direction, camera.up).normalize(), speed);
+
+        controls.update();
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    // -------------------------------
+    // Resize Event
+    // -------------------------------
+    window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+</script>
