@@ -130,20 +130,46 @@
                 }
             );
         });
-        // โหลดโมเดลใหม่ (nameboard.obj)
-        const mtlLoader2 = new THREE.MTLLoader();
-        mtlLoader2.setPath("Model/");
-        mtlLoader2.load("nameboard.mtl", (materials) => {
-            materials.preload();
-            const objLoader2 = new THREE.OBJLoader();
-            objLoader2.setMaterials(materials);
-            objLoader2.setPath("Model/");
-            objLoader2.load("nameboard.obj", (object2) => {
-                object2.scale.set(7, 7, 7); // ปรับขนาด
-                object2.position.set(0, 0, 0); // ปรับตำแหน่งบนแกน Z หรือ Y
-                scene.add(object2);
-            }); 
-        });
+ // โหลดโมเดลใหม่ (nameboard.obj)
+const mtlLoader2 = new THREE.MTLLoader();
+mtlLoader2.setPath("Model/");
+mtlLoader2.load("nameboard.mtl", (materials) => {
+    materials.preload();
+
+    const objLoader2 = new THREE.OBJLoader();
+    objLoader2.setMaterials(materials);
+    objLoader2.setPath("Model/");
+    objLoader2.load(
+        "nameboard.obj",
+        (object2) => {
+            object2.scale.set(5, 5, 5); // ปรับขนาด
+            object2.position.set(0, -20, 0); // ปรับตำแหน่ง
+
+            // 🔧 ปรับวัสดุให้สีเข้มและไม่โปร่งแสง
+            object2.traverse((child) => {
+                if (child.isMesh) {
+                    child.material.transparent = false;
+                    child.material.opacity = 1.0;
+                    child.material.color.multiplyScalar(1.4); // ✨ เพิ่มความเข้มสี 40%
+                    child.material.needsUpdate = true;
+
+                    // เพิ่มค่าการสะท้อนและเงา
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+                }
+            });
+
+            scene.add(object2);
+            console.log("✅ Loaded nameboard.obj with enhanced color");
+        },
+        (xhr) => {
+            console.log("กำลังโหลด nameboard:", (xhr.loaded / xhr.total) * 100 + "% loaded");
+        },
+        (error) => {
+            console.error("❌ โหลด nameboard.obj ไม่สำเร็จ:", error);
+        }
+    );
+});
 
 
         // -------------------------------
