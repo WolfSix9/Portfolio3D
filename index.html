@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio 3D Model Viewer</title>
+    <title>Portfolio 3D Model Viewer - FPS Mode</title>
     <style>
         body {
             margin: 0;
@@ -14,7 +14,7 @@
 
         #loading {
             position: fixed;
-            top: 0; 
+            top: 0;
             left: 0;
             width: 100%;
             height: 100%;
@@ -25,19 +25,60 @@
             color: #fff;
             font-family: sans-serif;
             font-size: 22px;
+            z-index: 10;
         }
     </style>
 </head>
 
 <body>
     <div id="loading">กำลังโหลดโมเดล...</div>
+    <!-- 🔹 เฟรมบอกวิธีควบคุม -->
+    <div id="controlsFrame">
+        <h3>🎮 วิธีควบคุม</h3>
+        <div>เดินหน้า / ถอยหลัง : <code>W</code> / <code>S</code></div>
+        <div>เลี้ยวซ้าย / ขวา : <code>A</code> / <code>D</code></div>
+        <div>วิ่งเร็ว : <code>Shift</code></div>
+        <div>กระโดด : <code>Space</code></div>
+        <div>หมุนมุมกล้อง : <code>เมาส์</code></div>
+        <div>คลิกหน้าจอ 1 ครั้ง เพื่อ Lock เมาส์</div>
+    </div>
+
+    <style>
+        #controlsFrame {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 12px 18px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #fff;
+            z-index: 20;
+            backdrop-filter: blur(4px);
+            font-family: 'Kanit', sans-serif;
+        }
+
+        #controlsFrame h3 {
+            margin: 0 0 6px 0;
+            font-size: 15px;
+            color: #ffd966;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 4px;
+        }
+
+        #controlsFrame code {
+            color: #00ffff;
+        }
+    </style>
 
     <!-- โหลดไลบรารี -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/RGBELoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lil-gui@0.17/dist/lil-gui.umd.min.js"></script>
 
     <script>
         // -------------------------------
@@ -54,22 +95,17 @@
         // -------------------------------
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.set(10, 10, 10);
-
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
+        camera.position.set(-50, 0, 150); // ความสูงระดับตา
 
         // -------------------------------
         // Light
         // -------------------------------
-        scene.add(new THREE.AmbientLight(0xffffff, 1.0));
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
+        scene.add(ambientLight);
         const dirLight = new THREE.DirectionalLight(0xffffff, 1.5);
         dirLight.position.set(10, 15, 10);
         dirLight.castShadow = true;
         scene.add(dirLight);
-
-  
 
         // -------------------------------
         // Background HDRI
@@ -86,14 +122,12 @@
         );
 
         // -------------------------------
-        // Load Model
+        // Load Model: home.obj
         // -------------------------------
         const mtlLoader = new THREE.MTLLoader();
         mtlLoader.setPath("Model/");
         mtlLoader.load("home.mtl", (materials) => {
             materials.preload();
-
-            // ปรับทุก material ไม่ให้โปร่งแสง
             for (let key in materials.materials) {
                 let mat = materials.materials[key];
                 mat.transparent = false;
@@ -108,10 +142,10 @@
                 (object) => {
                     object.traverse((child) => {
                         if (child.isMesh) {
-                            child.material.transparent = false;
-                            child.material.opacity = 1.0;
                             child.castShadow = true;
                             child.receiveShadow = true;
+                            child.material.transparent = false;
+                            child.material.opacity = 1.0;
                         }
                     });
                     object.scale.set(50, 50, 50);
@@ -130,66 +164,364 @@
                 }
             );
         });
- // โหลดโมเดลใหม่ (nameboard.obj)
-const mtlLoader2 = new THREE.MTLLoader();
-mtlLoader2.setPath("Model/");
-mtlLoader2.load("nameboard.mtl", (materials) => {
-    materials.preload();
 
-    const objLoader2 = new THREE.OBJLoader();
-    objLoader2.setMaterials(materials);
-    objLoader2.setPath("Model/");
-    objLoader2.load(
-        "nameboard.obj",
-        (object2) => {
-            object2.scale.set(5, 5, 5); // ปรับขนาด
-            object2.position.set(0, -20, 0); // ปรับตำแหน่ง
+        // -------------------------------
+        // Load Model: nameboard.obj
+        // -------------------------------
+        const mtlLoader2 = new THREE.MTLLoader();
+        mtlLoader2.setPath("Model/");
+        mtlLoader2.load("nameboard.mtl", (materials) => {
+            materials.preload();
 
-            // 🔧 ปรับวัสดุให้สีเข้มและไม่โปร่งแสง
-            object2.traverse((child) => {
-                if (child.isMesh) {
-                    child.material.transparent = false;
-                    child.material.opacity = 1.0;
-                    child.material.color.multiplyScalar(1.4); // ✨ เพิ่มความเข้มสี 40%
-                    child.material.needsUpdate = true;
+            const objLoader2 = new THREE.OBJLoader();
+            objLoader2.setMaterials(materials);
+            objLoader2.setPath("Model/");
+            objLoader2.load(
+                "nameboard.obj",
+                (object2) => {
+                    object2.scale.set(5, 5, 5);
+                    object2.position.set(200, -20, -50);
 
-                    // เพิ่มค่าการสะท้อนและเงา
-                    child.castShadow = true;
-                    child.receiveShadow = true;
+                    object2.traverse((child) => {
+                        if (child.isMesh) {
+                            child.material.transparent = false;
+                            child.material.opacity = 1.0;
+                            child.material.color.multiplyScalar(1.4);
+                            child.castShadow = true;
+                            child.receiveShadow = true;
+                        }
+                    });
+
+                    scene.add(object2);
+                },
+                (xhr) => {
+                    console.log("กำลังโหลด nameboard:", (xhr.loaded / xhr.total) * 100 + "% loaded");
+                },
+                (error) => {
+                    console.error("❌ โหลด nameboard.obj ไม่สำเร็จ:", error);
                 }
-            });
+            );
+        });
+        const mtlLoader3 = new THREE.MTLLoader();
+        mtlLoader2.setPath("Model/");
+        mtlLoader2.load("aboutMe.mtl", (materials) => {
+            materials.preload();
 
-            scene.add(object2);
-            console.log("✅ Loaded nameboard.obj with enhanced color");
-        },
-        (xhr) => {
-            console.log("กำลังโหลด nameboard:", (xhr.loaded / xhr.total) * 100 + "% loaded");
-        },
-        (error) => {
-            console.error("❌ โหลด nameboard.obj ไม่สำเร็จ:", error);
+            const objLoader2 = new THREE.OBJLoader();
+            objLoader2.setMaterials(materials);
+            objLoader2.setPath("Model/");
+            objLoader2.load(
+                "aboutMe.obj",
+                (object2) => {
+                    object2.scale.set(20, 20, 20);
+                    object2.position.set(-80, 70, 100);
+                    object2.name = "aboutMe"; // ← กำหนดชื่อโมเดลเพื่อตรวจจับการคลิก
+                    scene.add(object2);
+                },
+            );
+        });
+        const mtlLoader5 = new THREE.MTLLoader();
+        mtlLoader2.setPath("Model/");
+        mtlLoader2.load("PBR.mtl", (materials) => {
+            materials.preload();
+
+            const objLoader2 = new THREE.OBJLoader();
+            objLoader2.setMaterials(materials);
+            objLoader2.setPath("Model/");
+            objLoader2.load(
+                "PBR.obj",
+                (object2) => {
+                    object2.scale.set(10, 10, 10);
+                    object2.position.set(-80, 50, 100);
+                    object2.name = "aboutMe"; // ← กำหนดชื่อโมเดลเพื่อตรวจจับการคลิก
+                    scene.add(object2);
+                },
+            );
+        });
+        const mtlLoader6 = new THREE.MTLLoader();
+        mtlLoader2.setPath("Model/");
+        mtlLoader2.load("Back.mtl", (materials) => {
+            materials.preload();
+
+            const objLoader2 = new THREE.OBJLoader();
+            objLoader2.setMaterials(materials);
+            objLoader2.setPath("Model/");
+            objLoader2.load(
+                "Back.obj",
+                (object2) => {
+                    object2.scale.set(10, 10, 10);
+                    object2.position.set(250, 70, -200);
+                    object2.name = "Back"; // ← กำหนดชื่อโมเดลเพื่อตรวจจับการคลิก
+                    scene.add(object2);
+                },
+            );
+        });
+        let kuModel; // เก็บอ้างอิงโมเดล KU
+const mtlLoader4 = new THREE.MTLLoader();
+mtlLoader4.setPath("Model/");
+mtlLoader4.load("Ku.mtl", (materials) => {
+  materials.preload();
+
+  const objLoader2 = new THREE.OBJLoader();
+  objLoader2.setMaterials(materials);
+  objLoader2.setPath("Model/");
+  objLoader2.load(
+    "Ku.obj",
+    (object2) => {
+      object2.scale.set(80, 80, 80);
+      object2.position.set(-300, 10, -150);
+      object2.name = "kuModel";
+
+      // 🎨 ใช้ Toon Material (Cel-Shading)
+      object2.traverse((child) => {
+        if (child.isMesh) {
+          child.material = new THREE.MeshToonMaterial({
+            color: 0x2aaaff,       // สี KU ฟ้า
+            gradientMap: null,     // ให้เป็นโทนแสงเรียบ
+          });
+          child.castShadow = true;
+          child.receiveShadow = true;
         }
-    );
+      });
+
+      // 🖤 เพิ่มเส้นขอบ Outline รอบโมเดล
+      const edgeGeo = new THREE.EdgesGeometry(object2.children[0].geometry);
+      const edgeMat = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 1 });
+      const outline = new THREE.LineSegments(edgeGeo, edgeMat);
+      outline.position.copy(object2.position);
+      outline.scale.copy(object2.scale).multiplyScalar(1.02);
+      scene.add(outline);
+
+      scene.add(object2);
+      kuModel = object2; // ✅ ให้ animate หมุนต่อได้
+    }
+  );
 });
 
+
+
+        // -------------------- ระบบคลิกโมเดล aboutMe แล้วให้กล้องย้าย --------------------
+
+        // 🔹 ตัวตรวจจับ Raycast
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+
+        // 🔹 กำหนดจุดเป้าหมายที่กล้องจะเคลื่อนไปเมื่อคลิกโมเดลนี้ 
+        const cameraPoints1 = {
+            aboutMe: {
+                pos: new THREE.Vector3(250, -100, -150), // ← ปรับตำแหน่งกล้องที่ต้องการให้ไป
+                rotY: Math.PI / -2                    // ← ปรับมุมหมุนกล้อง (รัศมี)
+            }
+        };
+
+        // 🔹 ฟังก์ชันเคลื่อนกล้องแบบนุ่มนวล
+        function moveCameraTo(target) {
+            const targetPos = cameraPoints[target].pos.clone();
+            const targetRotY = cameraPoints[target].rotY;
+
+            const startPos = camera.position.clone();
+            const startRotY = camera.rotation.y;
+
+            const duration = 60; // จำนวนเฟรมในการเคลื่อน
+            let frame = 0;
+
+            function animateMove() {
+                frame++;
+                const t = frame / duration;
+
+                // เคลื่อนกล้องและหมุนอย่างนุ่มนวล
+                camera.position.lerpVectors(startPos, targetPos, t);
+                camera.rotation.y = THREE.MathUtils.lerp(startRotY, targetRotY, t);
+
+                if (t < 1) requestAnimationFrame(animateMove);
+            }
+
+            animateMove();
+        }
+
+        // -------------------- ตรวจจับการคลิก --------------------
+        window.addEventListener("click", (event) => {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(scene.children, true);
+
+            if (intersects.length > 0) {
+                const clicked = intersects[0].object;
+                console.log("🪧 Clicked:", clicked.name);
+
+                if (clicked.name === "aboutMe" || clicked.parent.name === "aboutMe") {
+                    moveCameraTo("aboutMe");
+                }
+                if (clicked.name === "Back" || clicked.parent.name === "Back") {
+                    moveCameraTo("Back");
+                }
+            }
+        });
+
+        // -------------------------------
+        // 🔹 FPS Controls: เดิน วิ่ง กระโดด
+        // -------------------------------
+        let moveForward = false,
+            moveBackward = false,
+            moveLeft = false,
+            moveRight = false,
+            isRunning = false,
+            isJumping = false;
+
+        const baseSpeed = 0.50; // ความเร็วเดิน
+        let speed = baseSpeed;
+        const jumpPower = 0.80; // ความสูงกระโดด
+        let velocityY = 0;
+        const gravity = 0.01; // ความเร่งแรงโน้มถ่วง
+
+        const forwardVec = new THREE.Vector3();
+        const rightVec = new THREE.Vector3();
+
+        let cameraY = 80; // ความสูงพื้นฐาน
+        const groundY = 80; // ความสูงพื้น (ระดับยืน)
+
+        // -------------------------------
+        // Keyboard Control
+        // -------------------------------
+        document.addEventListener("keydown", (e) => {
+            switch (e.code) {
+                case "KeyW": moveForward = true; break;
+                case "KeyS": moveBackward = true; break;
+                case "KeyA": moveLeft = true; break;
+                case "KeyD": moveRight = true; break;
+                case "ShiftLeft": isRunning = true; break;
+                case "Space":
+                    if (!isJumping) {
+                        isJumping = true;
+                        velocityY = jumpPower;
+                    }
+                    break;
+            }
+        });
+
+        document.addEventListener("keyup", (e) => {
+            switch (e.code) {
+                case "KeyW": moveForward = false; break;
+                case "KeyS": moveBackward = false; break;
+                case "KeyA": moveLeft = false; break;
+                case "KeyD": moveRight = false; break;
+                case "ShiftLeft": isRunning = false; break;
+            }
+        });
+
+        // -------------------------------
+        // Mouse Look (หมุนกล้องแนวตั้ง-แนวนอนเท่านั้น)
+        // -------------------------------
+        document.body.requestPointerLock =
+            document.body.requestPointerLock || document.body.mozRequestPointerLock;
+        document.body.onclick = () => document.body.requestPointerLock();
+
+        document.addEventListener("mousemove", (e) => {
+            if (document.pointerLockElement === document.body) {
+                // หมุนแนวนอน (y-axis)
+                camera.rotation.y -= e.movementX * 0.0001;
+
+                // หมุนแนวตั้ง (x-axis)
+                camera.rotation.x -= e.movementY * 0.0001;
+
+                // จำกัดไม่ให้กล้องหมุนเกินขึ้น/ลงเกินไป
+                camera.rotation.x = Math.max(-Math.PI / 1.7, Math.min(Math.PI / 1.7, camera.rotation.x));
+
+                // ป้องกันการเอียงทะแยง (ไม่หมุนแกน z)
+                camera.rotation.z = 0;
+            }
+        });
+
+        // -------------------------------
+        // ฟังก์ชันเคลื่อนไหว FPS
+        // -------------------------------
+        function updateMovement() {
+            const moveZ = (moveForward ? 1 : 0) - (moveBackward ? 1 : 0);
+            const moveX = (moveRight ? 1 : 0) - (moveLeft ? 1 : 0);
+
+            speed = isRunning ? baseSpeed * 2.2 : baseSpeed;
+
+            if (moveZ !== 0 || moveX !== 0) {
+                camera.getWorldDirection(forwardVec);
+                forwardVec.y = 0;
+                forwardVec.normalize();
+
+                rightVec.crossVectors(forwardVec, camera.up).normalize();
+
+                camera.position.addScaledVector(forwardVec, moveZ * speed);
+                camera.position.addScaledVector(rightVec, moveX * speed);
+            }
+            // กระโดด + แรงโน้มถ่วง
+            if (isJumping) {
+                cameraY += velocityY;
+                velocityY -= gravity;
+
+                if (cameraY <= groundY) {
+                    cameraY = groundY;
+                    isJumping = false;
+                    velocityY = 0;
+                }
+            }
+
+            camera.position.y = cameraY;
+        }
+
+        // -------------------------------
+        // dat.GUI แสง
+        // -------------------------------
+        const gui = new lil.GUI({ width: 300 });
+        const lightFolder = gui.addFolder("Light");
+        lightFolder.add(dirLight, "intensity", 0, 3, 0.1).name("Directional Light");
+        lightFolder.add(dirLight.position, "x", -50, 50, 1).name("Dir X");
+        lightFolder.add(dirLight.position, "y", -50, 50, 1).name("Dir Y");
+        lightFolder.add(dirLight.position, "z", -50, 50, 1).name("Dir Z");
+        lightFolder.open();
 
         // -------------------------------
         // Render Loop
         // -------------------------------
         function animate() {
             requestAnimationFrame(animate);
-            controls.update();
+            updateMovement(); // เดิน วิ่ง กระโดด
             renderer.render(scene, camera);
         }
         animate();
 
         // -------------------------------
-        // Resize Event
+        // Resize Handler
         // -------------------------------
         window.addEventListener("resize", () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
+
+        // 🔹 กำหนดจุดกล้องเมื่อคลิกโมเดล
+        const cameraPoints = {
+            aboutMe: {
+                pos: new THREE.Vector3(250, -100, -150),
+                rotY: Math.PI / -2
+            },
+            Back: {
+                pos: new THREE.Vector3(-50, 0, 150),
+                rotY: 0
+            }
+        };
+        function animate() {
+            requestAnimationFrame(animate);
+            updateMovement(); // เดิน วิ่ง กระโดด
+
+            // ✅ หมุนโมเดล KU ตลอดเวลา
+            if (kuModel) {
+                kuModel.rotation.y += 0.005; // หมุนรอบแกน Y
+            }
+
+            renderer.render(scene, camera);
+        }
+        animate();
+        
     </script>
 </body>
 
