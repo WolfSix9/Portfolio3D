@@ -121,196 +121,113 @@
             }
         );
 
-        // -------------------------------
-        // Load Model: home.obj
-        // -------------------------------
-        const mtlLoader = new THREE.MTLLoader();
-        mtlLoader.setPath("Model/");
-        mtlLoader.load("home.mtl", (materials) => {
-            materials.preload();
-            for (let key in materials.materials) {
-                let mat = materials.materials[key];
-                mat.transparent = false;
-                mat.opacity = 1.0;
-            }
 
-            const objLoader = new THREE.OBJLoader();
-            objLoader.setMaterials(materials);
-            objLoader.setPath("Model/");
-            objLoader.load(
-                "home.obj",
-                (object) => {
-                    object.traverse((child) => {
-                        if (child.isMesh) {
-                            child.castShadow = true;
-                            child.receiveShadow = true;
-                            child.material.transparent = false;
-                            child.material.opacity = 1.0;
-                        }
-                    });
-                    object.scale.set(50, 50, 50);
-                    object.position.set(0, 0, 0);
-                    scene.add(object);
-                    document.getElementById("loading").style.display = "none";
-                },
-                (xhr) => {
-                    document.getElementById("loading").innerText =
-                        "กำลังโหลด... " + Math.round((xhr.loaded / xhr.total) * 100) + "%";
-                },
-                (error) => {
-                    console.error("❌ โหลดโมเดลไม่สำเร็จ:", error);
-                    document.getElementById("loading").innerText =
-                        "เกิดข้อผิดพลาดในการโหลดโมเดล!";
-                }
-            );
-        });
+        // =========================
+        // 1) ตัวช่วยโหลด .MTL + .OBJ
+        // =========================
+        function loadOBJMTL(basePath, mtlName, objName, opts = {}) {
+            const { scale = [1, 1, 1], position = [0, 0, 0], rotation = [0, 0, 0], name = "", onEachMesh = null } = opts;
 
-        // -------------------------------
-        // Load Model: nameboard.obj
-        // -------------------------------
-        const mtlLoader2 = new THREE.MTLLoader();
-        mtlLoader2.setPath("Model/");
-        mtlLoader2.load("nameboard.mtl", (materials) => {
-            materials.preload();
+            const mtl = new THREE.MTLLoader();
+            mtl.setPath(basePath);               // << ใช้ path แบบสัมพัทธ์
+            mtl.load(mtlName, (materials) => {
+                materials.preload();
 
-            const objLoader2 = new THREE.OBJLoader();
-            objLoader2.setMaterials(materials);
-            objLoader2.setPath("Model/");
-            objLoader2.load(
-                "nameboard.obj",
-                (object2) => {
-                    object2.scale.set(5, 5, 5);
-                    object2.position.set(200, -20, -50);
+                const obj = new THREE.OBJLoader();
+                obj.setMaterials(materials);
+                obj.setPath(basePath);             // << ใช้ path แบบสัมพัทธ์
+                obj.load(
+                    objName,
+                    (root) => {
+                        root.name = name || objName;
+                        root.scale.set(...scale);
+                        root.position.set(...position);
+                        root.rotation.set(...rotation);
 
-                    object2.traverse((child) => {
-                        if (child.isMesh) {
-                            child.material.transparent = false;
-                            child.material.opacity = 1.0;
-                            child.material.color.multiplyScalar(1.4);
-                            child.castShadow = true;
-                            child.receiveShadow = true;
-                        }
-                    });
+                        root.traverse((child) => {
+                            if (child.isMesh) {
+                                child.castShadow = true;
+                                child.receiveShadow = true;
+                                // ถ้าต้องการปรับแต่งวัสดุรายชิ้น
+                                if (onEachMesh) onEachMesh(child);
+                            }
+                        });
 
-                    scene.add(object2);
-                },
-                (xhr) => {
-                    console.log("กำลังโหลด nameboard:", (xhr.loaded / xhr.total) * 100 + "% loaded");
-                },
-                (error) => {
-                    console.error("❌ โหลด nameboard.obj ไม่สำเร็จ:", error);
-                }
-            );
-        });
-        const mtlLoader3 = new THREE.MTLLoader();
-        mtlLoader2.setPath("Model/");
-        mtlLoader2.load("aboutMe.mtl", (materials) => {
-            materials.preload();
-
-            const objLoader2 = new THREE.OBJLoader();
-            objLoader2.setMaterials(materials);
-            objLoader2.setPath("Model/");
-            objLoader2.load(
-                "aboutMe.obj",
-                (object2) => {
-                    object2.scale.set(20, 20, 20);
-                    object2.position.set(-80, 70, 100);
-                    object2.name = "aboutMe"; // ← กำหนดชื่อโมเดลเพื่อตรวจจับการคลิก
-                    scene.add(object2);
-                },
-            );
-        });
-        const mtlLoader5 = new THREE.MTLLoader();
-        mtlLoader2.setPath("Model/");
-        mtlLoader2.load("PBR.mtl", (materials) => {
-            materials.preload();
-
-            const objLoader2 = new THREE.OBJLoader();
-            objLoader2.setMaterials(materials);
-            objLoader2.setPath("Model/");
-            objLoader2.load(
-                "PBR.obj",
-                (object2) => {
-                    object2.scale.set(10, 10, 10);
-                    object2.position.set(-80, 50, 100);
-                    object2.name = "PBR"; // ← เพิ่มชื่อโมเดลเพื่อตรวจจับการคลิก
-                    scene.add(object2);
-                },
-            );
-        });
-
-
-        const mtlLoader6 = new THREE.MTLLoader();
-        mtlLoader2.setPath("Model/");
-        mtlLoader2.load("Back.mtl", (materials) => {
-            materials.preload();
-
-            const objLoader2 = new THREE.OBJLoader();
-            objLoader2.setMaterials(materials);
-            objLoader2.setPath("Model/");
-            objLoader2.load(
-                "Back.obj",
-                (object2) => {
-                    object2.scale.set(10, 10, 10);
-                    object2.position.set(300, 70, -250);
-                    object2.name = "Back"; // ← กำหนดชื่อโมเดลเพื่อตรวจจับการคลิก
-                    scene.add(object2);
-                },
-            );
-        });
-        const mtlLoader7 = new THREE.MTLLoader();
-        mtlLoader2.setPath("Model/");
-        mtlLoader2.load("Back.mtl", (materials) => {
-            materials.preload();
-
-            const objLoader2 = new THREE.OBJLoader();
-            objLoader2.setMaterials(materials);
-            objLoader2.setPath("Model/");
-            objLoader2.load(
-                "Back.obj",
-                (object2) => {
-                    object2.scale.set(10, 10, 10);
-                    object2.position.set(-270, 70, -140);
-                    object2.name = "Back"; // ← กำหนดชื่อโมเดลเพื่อตรวจจับการคลิก
-                    scene.add(object2);
-                },
-            );
-        });
-
-        let kuModel;
-        const mtlLoader4 = new THREE.MTLLoader();
-        mtlLoader4.setPath("Model/");
-        mtlLoader4.load("Ku.mtl", (materials) => {
-            materials.preload();
-
-            const objLoader2 = new THREE.OBJLoader();
-            objLoader2.setMaterials(materials);
-            objLoader2.setPath("Model/");
-            objLoader2.load(
-                "Ku.obj",
-                (object2) => {
-                    object2.scale.set(80, 80, 80);
-                    object2.position.set(-300, 10, -150);
-                    object2.name = "kuModel";
-
-                     object2.traverse((child) => {
-                if (child.isMesh) {
-                    child.material = new THREE.MeshStandardMaterial({
-                        color: 0x21723e,  
-                        roughness: 0.3,   // การขรุขระของพื้นผิว
-                        metalness: 1,   // ความเป็นโลหะ
-                        envMap: scene.background,  // ใช้ภาพแวดล้อมในฉาก
-                        reflectivity: 1  // การสะท้อนแสง
-                    });
-
-                    child.castShadow = true;
-                    child.receiveShadow = true;
-                }
+                        scene.add(root);
+                        console.log(`✅ Loaded: ${objName}`);
+                    },
+                    (xhr) => {
+                        const pct = xhr.total ? (xhr.loaded / xhr.total) * 100 : 0;
+                        console.log(`กำลังโหลด ${objName}: ${pct.toFixed(2)}% loaded`);
+                    },
+                    (err) => console.error(`❌ โหลด ${objName} ไม่สำเร็จ:`, err)
+                );
             });
-                    kuModel = object2;
-                    scene.add(object2);
-                },
-            );
+        }
+
+        // ======================================
+        // 2) เรียกโหลดโมเดลทั้งหมด (พาธ ./Model/)
+        // ======================================
+        // home
+        loadOBJMTL("./Model/", "home.mtl", "home.obj", {
+            scale: [50, 50, 50],
+            position: [0, 0, 0],
+            name: "home"
+        });
+
+        // nameboard
+        loadOBJMTL("./Model/", "nameboard.mtl", "nameboard.obj", {
+            scale: [5, 5, 5],
+            position: [200, -20, -50],
+            name: "nameboard",
+            onEachMesh: (m) => {
+                // ตัวอย่างปรับสี/ความทึบ (ถ้าอยากให้เด่นขึ้น)
+                if (m.material && m.material.color) m.material.color.multiplyScalar(1.2);
+                m.material.transparent = false;
+                m.material.opacity = 1.0;
+            }
+        });
+
+        // aboutMe
+        loadOBJMTL("./Model/", "aboutMe.mtl", "aboutMe.obj", {
+            scale: [20, 20, 20],
+            position: [-80, 70, 100],
+            name: "aboutMe"
+        });
+
+        // PBR (ป้าย/ตัวอักษร “PBR”)
+        loadOBJMTL("./Model/", "PBR.mtl", "PBR.obj", {
+            scale: [10, 10, 10],
+            position: [-80, 50, 100],
+            name: "PBR"
+        });
+
+        // Back (สองตำแหน่ง ถ้าคุณมี 2 ชิ้น)
+        loadOBJMTL("./Model/", "Back.mtl", "Back.obj", {
+            scale: [10, 10, 10],
+            position: [300, 70, -250],
+            name: "Back"
+        });
+        loadOBJMTL("./Model/", "Back.mtl", "Back.obj", {
+            scale: [10, 10, 10],
+            position: [-270, 70, -140],
+            name: "Back2"
+        });
+
+        // KU (ตั้งวัสดุเป็น PBR มาตรฐานให้—ไม่มี reflectivity แล้ว)
+        loadOBJMTL("./Model/", "Ku.mtl", "Ku.obj", {
+            scale: [80, 80, 80],
+            position: [-300, 10, -150],
+            name: "kuModel",
+            onEachMesh: (child) => {
+                child.material = new THREE.MeshStandardMaterial({
+                    color: 0x21723e,      // เขียว KU
+                    metalness: 1.0,
+                    roughness: 0.3,
+                    envMap: scene.environment || null,
+                    envMapIntensity: 1.0
+                });
+            }
         });
 
 
@@ -524,20 +441,20 @@
 
         // 🔹 กำหนดจุดกล้องเมื่อคลิกโมเดล
         const cameraPoints = {
-    aboutMe: {
-        pos: new THREE.Vector3(250, -100, -160),
-        rotY: Math.PI / -2
-    },
-    PBR: {
-        pos: new THREE.Vector3(-250, 10, -100), // เปลี่ยนตำแหน่งที่ต้องการ
-        rotY: Math.PI / 4 // ปรับมุมหมุนกล้อง
-    },
-    Back: {
+            aboutMe: {
+                pos: new THREE.Vector3(250, -100, -160),
+                rotY: Math.PI / -2
+            },
+            PBR: {
+                pos: new THREE.Vector3(-250, 10, -100), // เปลี่ยนตำแหน่งที่ต้องการ
+                rotY: Math.PI / 4 // ปรับมุมหมุนกล้อง
+            },
+            Back: {
                 pos: new THREE.Vector3(-50, 0, 150),
                 rotY: 0
             }
-    
-};
+
+        };
 
         function animate() {
             requestAnimationFrame(animate);
@@ -551,6 +468,7 @@
             renderer.render(scene, camera);
         }
         animate();
+
 
     </script>
 </body>
